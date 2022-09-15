@@ -3,6 +3,7 @@ const schema = Mongoose.Schema;
 Mongoose.connect("mongodb+srv://Immanuel:immanuel@cluster0.rnux5pm.mongodb.net/CollegeBusDB?retryWrites=true&w=majority")
 const registerSchema = new schema({
     name : {type: String,required :true},
+    userName : {type:String,required:true},
     registerNumber : {type: Number,required :true},
     address : {type: String,required :true},
     department : {type: String,required :true},

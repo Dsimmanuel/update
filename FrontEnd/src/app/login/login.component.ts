@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class LoginComponent implements OnInit {
   user={
     name:"",
+    userName:"",
     registerNumber:"",
     address:"",
     department:"",

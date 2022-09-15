@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/api.service';
 export class StudentComponent implements OnInit {
   user={
     name:"",
+    userName:"",
     registerNumber:"",
     address:"",
     department:"",

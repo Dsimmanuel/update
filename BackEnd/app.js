@@ -66,6 +66,7 @@ app.delete('/delete/:id',function(req,res){
     
     const id = req.params.id,
     name=req.body.name,
+    userName=req.body.userName,
     registerNumber=req.body.registerNumber,
     address=req.body.address,
     department=req.body.department,
@@ -78,6 +79,7 @@ app.delete('/delete/:id',function(req,res){
     register.findByIdAndUpdate({"_id":id},
     {$set:{"name":name,
     "registerNumber":registerNumber,
+    "userName":userName,
     "address":address,
     "department":department,
     "semester":semester,

@@ -12,6 +12,7 @@
                               <thead class="table-secondary">
                                 <tr>
                                   <th scope="col">Name</th>
+                                  <th scope="col">Username</th>
                                   <th scope="col">Register Number</th>
                                   <th scope="col">address</th>
                                   <th scope="col">Department</th>
@@ -33,6 +34,16 @@
                                       {{i.name}}
                                     </div>
                                   </th>
+
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="address" class="form-control" [(ngModel)]="i.userName"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.userName}}
+                                    </div>
+                                  </td>
+
                                   <td>
                                     <div *ngIf="i.isEdit">
                                       <input type="text" name="register" class="form-control" [(ngModel)]="i.registerNumber">
