@@ -1,0 +1,75 @@
+<div class="main">
+    <div class="container">
+      <div class="row ">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 g-3 ">
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                  <div class="card text-center " >
+                      <div class="card-body ">
+                        <div class="table-responsive">
+                          
+                          <table class="table">
+                              <thead class="table-secondary">
+                                <tr>
+                                  <th scope="col">Bus Id</th>
+                                  <th scope="col">Bus no</th>
+                                  <th scope="col">Total seats</th>
+                                  <th scope="col">Image</th>
+                                  <th scope="col">Boarding Point</th>
+                                  <th colspan="2"><a href=""><button class="btn btn-success" >Add Route</button></a></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let i of data">
+                                  <th scope="row">
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="busid" class="form-control" [(ngModel)]="i.busId">
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.busId}}
+                                    </div>
+                                  </th>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="busno" class="form-control" [(ngModel)]="i.busNo">
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.busNo}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="tseats" class="form-control" [(ngModel)]="i.totalSeats"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.totalSeats}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="img" class="form-control" [(ngModel)]="i.image" >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.image}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="bpoint" class="form-control" [(ngModel)]="i.boardingPoint"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.boardingPoint}}
+                                    </div>
+                                 
+                                  
+                                </tr>
+                              </tbody>
+                          </table>
+                        
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>

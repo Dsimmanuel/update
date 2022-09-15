@@ -1,0 +1,61 @@
+
+<div class="container" >
+    <div class="row g-3">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div>
+              <h3 align="center">
+                <small class="text-muted">Add Driver</small>
+              </h3>
+              <hr>
+              <div>
+              <div class="card border-secondary mb-3" style="width:500px">
+                <div class="card-body" >
+           
+           
+             
+                <form #dregister="ngForm" (ngSubmit)="Adddriver()">
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="form-label">Name</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.name">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Username</label>
+                    <input id="Name"  class="form-control" type="text" name="namefield" [(ngModel)]="driver.userName">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Contact Number</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.contactNumber">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Email id </label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.email">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Driver id</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.driverId">
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Bus id</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.busId" >
+                  </div>
+                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="Name" class="label">Password</label>
+                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.password" >
+                  </div>
+                
+                <div class="group">
+                  <br>
+                  <button class="btn btn-primary">Register</button>
+                </div>
+                
+                </form>
+              </div>
+            </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+           
+                        
+        

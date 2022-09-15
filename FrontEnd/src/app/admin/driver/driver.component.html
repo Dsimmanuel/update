@@ -1,0 +1,107 @@
+
+<div class="main">
+    <div class="container">
+      <div class="row ">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 g-3 ">
+              <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+                  <div class="card text-center " >
+                      <div class="card-body ">
+                        <div class="table-responsive">
+                          
+                          <table class="table">
+                              <thead class="table-secondary">
+                                <tr>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Username</th>
+                                  <th scope="col">Contact Number</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">DriverId</th>
+                                  <th scope="col">BusId</th>
+                                  <th colspan="2"><a href="./src/app/adddriver/adddriver.component.html"><button class="btn btn-success" >Add Driver</button></a></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let i of data">
+                                  <th scope="row">
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="name" class="form-control" [(ngModel)]="i.name">
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.name}}
+                                    </div>
+                                  </th>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="username" class="form-control" [(ngModel)]="i.userName">
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.userName}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="number" class="form-control" [(ngModel)]="i.contactNumber"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.contactNumber}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="email" class="form-control" [(ngModel)]="i.email" >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.email}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" name="driverid" class="form-control" [(ngModel)]="i.driverId"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.driverId}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="i.isEdit">
+                                      <input type="text" class="form-control" name="busid" [(ngModel)]="i.busId"  >
+                                    </div>
+                                    <div *ngIf="!i.isEdit">
+                                      {{i.busId}}
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div *ngIf="!i.isEdit">
+                                      <table class="g-3">
+                                        <tr>
+                                          <td><button class="btn btn-primary" (click)="onEdit(i)">Edit</button></td>
+                                          &nbsp;
+                                          <td><button class="btn btn-danger"  (click)="Deletedriver(i)">Delete</button></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                    <div *ngIf="i.isEdit">
+                                      <table class="g-3">
+                                        <tr>
+                                          <td><button class="btn btn-primary" (click)="Updatedriver(i)">save</button></td>
+                                          &nbsp;
+                                          <td> <button class="btn btn-danger" (click)="i.isEdit = false">cancel</button></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                    
+                                  
+                                  </td>
+                                  
+                                </tr>
+                              </tbody>
+                          </table>
+                        
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
