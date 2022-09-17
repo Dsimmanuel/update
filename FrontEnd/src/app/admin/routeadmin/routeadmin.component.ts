@@ -12,6 +12,7 @@ export class RouteadminComponent implements OnInit {
     api.viewRoute().subscribe(
       (response)=>{
         this.data=response
+        
       }
     )
   }

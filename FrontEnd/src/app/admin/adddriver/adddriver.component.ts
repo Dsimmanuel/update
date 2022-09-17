@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 
@@ -20,8 +21,30 @@ export class AdddriverComponent implements OnInit {
   constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event:any) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+            
+          }, false)
+        })
+    })()
   }
+  
   Adddriver(){
+    
     console.log(this.driver)
     this.api.adddriver(this.driver).subscribe(
       (data)=>{

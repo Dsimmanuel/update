@@ -1,61 +1,85 @@
-
 <div class="container" >
-    <div class="row g-3">
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+  <div class="row g-3">
+      <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <div>
+            <h3 align="center">
+              <small class="text-muted">Add Driver</small>
+            </h3>
+            <hr>
             <div>
-              <h3 align="center">
-                <small class="text-muted">Add Driver</small>
-              </h3>
-              <hr>
-              <div>
-              <div class="card border-secondary mb-3" style="width:500px">
-                <div class="card-body" >
+            <div class="card border-secondary mb-3" style="width:500px">
+              <div class="card-body" >
+         
+         
            
-           
-             
-                <form #dregister="ngForm" (ngSubmit)="Adddriver()">
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="form-label">Name</label>
-                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.name">
+              <form class="row g-3 needs-validation" novalidate  #dregister="ngForm" >
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="validationCustom01" class="form-label">Name</label>
+                  <input id="validationCustom01" class="form-control" type="text" name="namefield" [(ngModel)]="driver.name" required>
+                  <div class="valid-feedback">
                   </div>
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="label">Username</label>
-                    <input id="Name"  class="form-control" type="text" name="namefield" [(ngModel)]="driver.userName">
+                  <div class="invalid-feedback">
+                    Please write a valid name
                   </div>
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="label">Contact Number</label>
-                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.contactNumber">
-                  </div>
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="label">Email id </label>
-                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.email">
-                  </div>
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="label">Driver id</label>
-                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.driverId">
-                  </div>
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="label">Bus id</label>
-                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.busId" >
-                  </div>
-                  <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="Name" class="label">Password</label>
-                    <input id="Name" class="form-control" type="text" name="namefield" [(ngModel)]="driver.password" >
-                  </div>
-                
-                <div class="group">
-                  <br>
-                  <button class="btn btn-primary">Register</button>
                 </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="validationCustomUsername" class="form-label">Username</label>
+                  <input id="validationCustomUsername"  class="form-control" type="text" name="userName" [(ngModel)]="driver.userName" required minlength="6" maxlength="20">
+                  <div class="invalid-feedback">
+                    should have atleast 6 characters
+                  </div>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="validationCustom02" class="label">Contact Number</label>
+                  <input id="validationCustom02" class="form-control"  name="contactNumber" [(ngModel)]="driver.contactNumber" required pattern="[0-9]*" minlength="10" maxlength="10">
+                  <div class="invalid-feedback">
+                    provide a valid contact number
+                  </div>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="mail" class="label">Email id </label>
+                  <input id="mail" class="form-control" type="email" name="driverId" [(ngModel)]="driver.email" required pattern=".+@gmail.com">
+                  <div class="invalid-feedback">
+                    provide a valid Emailid
+                  </div>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="dId" class="label">Driver id</label>
+                  <input id="dId" class="form-control" name="namefield" [(ngModel)]="driver.driverId" required pattern="[0-9]*">
+                  <div class="invalid-feedback">
+                    provide a valid DriveId
+                  </div>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="Bid" class="label">Bus id</label>
+                  <input id="Bid" class="form-control"  name="busid" [(ngModel)]="driver.busId" required pattern="[0-9]*">
+                  <div class="invalid-feedback">
+                    provide a valid BusId
+                  </div>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <label for="pass" class="label">Password</label>
+                  <input id="pass" class="form-control" type="password" name="password" [(ngModel)]="driver.password" required minlength="6" maxlength="40">
+                  <div class="invalid-feedback">
+                    should contain minimum 6 characters
+                  </div>
+                </div>
+              
+              <div class="group">
+                <br>
                 
-                </form>
+              <div *ngIf="dregister.valid">
+                <button  class="btn btn-primary" type="submit" (click)="Adddriver()" >Register</button>
               </div>
-            </div>
+              <div *ngIf="!dregister.valid">
+                <button  class="btn btn-primary" >Register</button>
               </div>
+              </div>
+              </form>
             </div>
-        </div>
-    </div>
+          </div>
+            </div>
+          </div>
+      </div>
+  </div>
 </div>
-           
-                        
-        
