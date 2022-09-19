@@ -25,13 +25,43 @@ export class LoginComponent implements OnInit {
   constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+
+    (function () {
+      
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event:any) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+            
+          }, false)
+        })
+    })()
+
   }
+
   Adduser(){
-    this.api.adduser(this.user).subscribe(
-      (data)=>{
-        alert("success");
-      }
-    )
+    console.log(this.user)
+    if(this.user.password == this.user.confirmPassword)
+    {
+      console.log("password match")
+      this.api.adduser(this.user).subscribe(
+        (data)=>{
+          alert("success");
+        }
+        
+      )
+      
+    }else{
+      console.log("password doesn't match")
+    }
   }
   
 
