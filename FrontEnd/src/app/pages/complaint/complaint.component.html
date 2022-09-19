@@ -9,15 +9,15 @@
                   </h3>
             </div>
             <br>
-            <form>
+            <form #complaints="ngForm" (ngSubmit)="Complaint()">
             <div class="row g-3">
                 <div class="col col-12 col-sm-12 col-mg-12 col-lg-12 col-xl-12 col xxl-12">
                     <label for="" class="form-label">What has Happend?</label>
-                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea><br>
+                    <textarea name="happend" id="" cols="30" rows="5" class="form-control" [(ngModel)]="complaint.happend"></textarea><br>
                 </div>
                 <div class="col col-12 col-sm-12 col-mg-12 col-lg-12 col-xl-12 col xxl-12">
                     <label for="" class="form-label">How can we make things right?</label>
-                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea><br>
+                    <textarea name="right" id="" cols="30" rows="5" class="form-control" [(ngModel)]="complaint.right"></textarea><br>
                 </div>        
                 <div class="col col-12 col-sm-6 col-mg-6 col-lg-6 col-xl-6 col xxl-6">
                     <button class="btn btn-primary">Submit</button>

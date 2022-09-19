@@ -5,6 +5,7 @@ const Cors=require("cors")
 const {register}=require("./src/model/studRegister")
 const {dregister}=require("./src/model/driverRegister")
 const {routeDetails}=require("./src/model/routeDetails")
+const { complaint } = require("./src/model/complaint")
 
 
 const app=Express()
@@ -221,6 +222,43 @@ app.post("/addRoute",(req,res)=>{
         }
     )
 })
+
+
+//complaints
+
+app.get("/viewComplaint",(req,res)=>{
+    
+    complaint.find(
+        (error,data)=>{
+            if(error){
+                res.send(error)
+                
+            }
+            else{
+                console.log(data)
+                res.send(data)
+            }
+        }
+    )
+})
+
+app.post("/addComplaint",(req,res)=>{
+    const data=req.body
+    console.log(data)
+    const ob=new complaint(data)
+    ob.save(
+        (error,data)=>{
+            if(error){
+                res.send(error)
+                console.log(error)
+            }
+            else{
+                res.send(data)
+            }
+        }
+    )
+})
+
 
 
 app.listen(3000,()=>{

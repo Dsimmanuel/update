@@ -47,5 +47,15 @@ export class ApiService {
   viewRoute=()=>{
     return this.http.get<any>("http://localhost:3000/viewRoute")
   }
+
+  //complaint
+
+
+  addcomplaint=(complaint:any)=>{
+    return this.http.post<any>("http://localhost:3000/addComplaint",complaint)
+  }
+  viewcomplaint=()=>{
+    return this.http.get<any>("http://localhost:3000/viewComplaint")
+  }
 }
 
