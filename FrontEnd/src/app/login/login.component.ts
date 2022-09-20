@@ -20,7 +20,10 @@ export class LoginComponent implements OnInit {
     password:"",
     confirmPassword:""
   }
-  
+  p={
+    pass:""
+  }
+
 
   constructor(private api:ApiService) { }
 
@@ -60,7 +63,7 @@ export class LoginComponent implements OnInit {
       )
       
     }else{
-      console.log("password doesn't match")
+      alert("password doesn't match !")
     }
   }
   
