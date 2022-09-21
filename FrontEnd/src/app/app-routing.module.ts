@@ -10,6 +10,7 @@ import { DriverComponent } from './admin/driver/driver.component';
 import { AdddriverComponent } from './admin/adddriver/adddriver.component';
 import { ComplaintComponent } from './pages/complaint/complaint.component';
 import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
+import { ComplaintadminComponent } from './admin/complaintadmin/complaintadmin.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'driver',component:DriverComponent},
   {path:'adddriver',component:AdddriverComponent},
   {path:'complaint',component:ComplaintComponent},
-  {path:'addRoute',component:RouteadminComponent}
+  {path:'addRoute',component:RouteadminComponent},
+  {path:'viewComplaint',component:ComplaintadminComponent}
   
 ];
 

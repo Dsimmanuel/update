@@ -16,8 +16,9 @@ import { DriverComponent } from './admin/driver/driver.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { AdddriverComponent } from './admin/adddriver/adddriver.component';
 import { ComplaintComponent } from './pages/complaint/complaint.component';
-import { FooterComponent } from './sharepage/navbar/footer/footer.component';
+import { FooterComponent } from './sharepage/footer/footer.component';
 import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
+import { ComplaintadminComponent } from './admin/complaintadmin/complaintadmin.component';
 
 
 
@@ -36,6 +37,7 @@ import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
     ComplaintComponent,
     FooterComponent,
     RouteadminComponent,
+    ComplaintadminComponent,
   ],
   imports: [
     BrowserModule,
