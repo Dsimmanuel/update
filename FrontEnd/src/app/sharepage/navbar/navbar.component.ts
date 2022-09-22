@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class NavbarComponent implements OnInit {
   isStudent=false
-  isAdmin=false
+  isAdmin=true
   isDriver=false
 
   constructor(public api:ApiService) { }

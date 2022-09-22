@@ -43,6 +43,9 @@ export class ApiService {
   }
 
   //route
+  addroute=()=>{
+    
+  }
 
   viewRoute=()=>{
     return this.http.get<any>("http://localhost:3000/viewRoute")
