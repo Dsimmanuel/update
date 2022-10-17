@@ -20,6 +20,8 @@ import { FooterComponent } from './sharepage/footer/footer.component';
 import { RouteadminComponent } from './admin/routeadmin/routeadmin.component';
 import { ComplaintadminComponent } from './admin/complaintadmin/complaintadmin.component';
 import { AddrouteComponent } from './admin/addroute/addroute.component';
+import { Route1Component } from './admin/route1/route1.component';
+import { Route2Component } from './admin/route2/route2.component';
 
 
 
@@ -40,6 +42,8 @@ import { AddrouteComponent } from './admin/addroute/addroute.component';
     RouteadminComponent,
     ComplaintadminComponent,
     AddrouteComponent,
+    Route1Component,
+    Route2Component,
   ],
   imports: [
     BrowserModule,

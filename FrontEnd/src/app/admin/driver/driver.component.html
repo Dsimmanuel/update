@@ -28,7 +28,7 @@
                                 <th scope="col">Contact Number</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">DriverId</th>
-                                <th scope="col">BusId</th>
+                                <th scope="col">routeNo<th>
                                 <th colspan="2"><a routerLink="/adddriver"><button class="btn btn-success" >Add Driver</button></a></th>
                               </tr>
                             </thead>
@@ -76,17 +76,17 @@
                                 </td>
                                 <td>
                                   <div *ngIf="i.isEdit">
-                                    <input type="text" class="form-control" name="busid" [(ngModel)]="i.busId"  >
+                                    <input type="text" class="form-control" name="busid" [(ngModel)]="i.routeNo"  >
                                   </div>
                                   <div *ngIf="!i.isEdit">
-                                    {{i.busId}}
+                                    {{i.routeNo}}
                                   </div>
                                 </td>
                                 <td>
                                   <div *ngIf="!i.isEdit">
                                     <table class="g-3">
                                       <tr>
-                                        <td><button class="btn btn-primary" (click)="onEdit(i)">Edit</button></td>
+                                        <td><button class="btn btn-primary" (click)="saveDriver(i)">Edit</button></td>
                                         &nbsp;
                                         <td><button class="btn btn-danger"  (click)="Deletedriver(i)">Delete</button></td>
                                       </tr>

@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 
 @Component({
@@ -8,17 +9,18 @@ import { ApiService } from '../../api.service';
   styleUrls: ['./adddriver.component.css']
 })
 export class AdddriverComponent implements OnInit {
-  driver={
-    name:"",
-    userName:"",
-    contactNumber:"",
-    email:"",
-    driverId:"",
-    busId:"",
-    password:""
-    }
 
-  constructor(private api:ApiService) { }
+  rdata:any=[]
+  constructor(private api:ApiService,
+    private route:Router) { 
+   this.rdata = this.api.receivedata()
+   console.log("driver")
+   console.log(this.rdata)
+   if(this.rdata){
+    this.driver = this.rdata
+    console.log(this.driver)
+   }
+  }
 
   ngOnInit(): void {
     (function () {
@@ -40,16 +42,22 @@ export class AdddriverComponent implements OnInit {
         })
     })()
   }
-  
-  Adddriver(){
+  Updatedriver(i:any){
     
-    console.log(this.driver)
-    this.api.adddriver(this.driver).subscribe(
+    console.log()
+    this.api.updatedriver(i).subscribe(
       (data)=>{
         console.log(data)
-        alert("success");
+        this.route.navigate(['/driver'])
       }
+      
+      
     )
+    
+
+
   }
+  
+  driver:any=[]
 
 }

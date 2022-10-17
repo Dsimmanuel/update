@@ -19,22 +19,22 @@
                           <table class="table">
                               <thead class="table-secondary">
                                 <tr>
-                                  <th scope="col">Bus Id</th>
+                                  <th scope="col">Route No</th>
                                   <th scope="col">Bus no</th>
                                   <th scope="col">Total seats</th>
                                   <th scope="col">Image</th>
                                   <th scope="col">Boarding Point</th>
-                                  <th colspan="2"><a href=""><button class="btn btn-success" >Add Route</button></a></th>
+                                  <th colspan="2"><a routerLink="/addRoute"><button class="btn btn-success" >Add Route</button></a></th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr *ngFor="let i of data">
                                   <th scope="row">
                                     <div *ngIf="i.isEdit">
-                                      <input type="text" name="busid" class="form-control" [(ngModel)]="i.busId">
+                                      <input type="text" name="busid" class="form-control" [(ngModel)]="i.routeNo">
                                     </div>
                                     <div *ngIf="!i.isEdit">
-                                      {{i.busId}}
+                                      {{i.routeNo}}
                                     </div>
                                   </th>
                                   <td>
@@ -47,10 +47,10 @@
                                   </td>
                                   <td>
                                     <div *ngIf="i.isEdit">
-                                      <input type="text" name="tseats" class="form-control" [(ngModel)]="i.totalSeats"  >
+                                      <input type="text" name="tseats" class="form-control" [(ngModel)]="i.seats"  >
                                     </div>
                                     <div *ngIf="!i.isEdit">
-                                      {{i.totalSeats}}
+                                      {{i.seats}}
                                     </div>
                                   </td>
                                   <td>
@@ -62,12 +62,29 @@
                                     </div>
                                   </td>
                                   <td>
-                                    <div *ngIf="i.isEdit">
-                                      <input type="text" name="bpoint" class="form-control" [(ngModel)]="i.boardingPoint"  >
-                                    </div>
+                                    <a href="/route2"><button class="btn btn-success">Edit boardingPoints</button></a>
+                                  <td>
                                     <div *ngIf="!i.isEdit">
-                                      {{i.boardingPoint}}
+                                      <table class="g-3">
+                                        <tr>
+                                          <td><button class="btn btn-primary" (click)="onEdit(i)">Edit</button></td>
+                                          &nbsp;
+                                          <td><button class="btn btn-danger"  (click)="Deleteroute(i)">Delete</button></td>
+                                        </tr>
+                                      </table>
                                     </div>
+                                    <div *ngIf="i.isEdit">
+                                      <table class="g-3">
+                                        <tr>
+                                          <td><button class="btn btn-primary" (click)="Updateroute(i)">save</button></td>
+                                          &nbsp;
+                                          <td> <button class="btn btn-danger" (click)="i.isEdit = false">cancel</button></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                    
+                                  
+                                  </td> 
                                  
                                   
                                 </tr>

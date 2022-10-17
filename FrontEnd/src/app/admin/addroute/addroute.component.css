@@ -1,0 +1,19 @@
+.container{
+   
+ width:100%;
+
+max-width:1000px;
+min-height:1200px;
+}
+.button{
+
+
+
+text-align: center;
+
+
+}
+
+.button:hover{
+    background-color: rgb(61, 30, 216);
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -17,12 +18,14 @@ export class DriverComponent implements OnInit {
 
   }
 
-  constructor(private api:ApiService) { 
+  constructor(private api:ApiService,
+    private route:Router) { 
     api.viewdriver().subscribe(
       (response)=>{
         this.data=response
       }
     )
+    
   }
 
   ngOnInit(): void {
@@ -30,6 +33,10 @@ export class DriverComponent implements OnInit {
   onEdit(item:any) {
     item.isEdit = true
   }
+  offEdit(item:any){
+    item.isEdit=false
+  }
+
 
   Deletedriver(datas:any){
     this.api.deletedriver(datas._id).subscribe(
@@ -47,11 +54,20 @@ export class DriverComponent implements OnInit {
     this.api.updatedriver(i).subscribe(
       (data)=>{
         console.log(data)
-        window.location.reload()
+        i.isEdit=false
       }
       
+      
     )
+    
 
+
+  }
+
+  saveDriver(i:any){
+    console.log(i)
+    this.api.savedriver(i)
+    this.route.navigate(['/adddriver'])
   }
 
 
